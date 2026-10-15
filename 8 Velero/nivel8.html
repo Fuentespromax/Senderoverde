@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Forest — Nivel 8</title>
+    <link rel="stylesheet" href="nivel8.css">
+    <script src="nivel8.js" defer></script>
+</head>
+<body>
+    <main class="game">
+        <header class="game-header">
+            <span class="game-tag">Velero</span>
+            <span class="level-tag">Arbol 08</span>
+        </header>
+
+        <section class="scene" aria-label="Escenario pixel art">
+            <div class="sun-pixel"></div>
+            <div class="cloud cloud-one"></div>
+            <div class="cloud cloud-two"></div>
+
+            <div class="ground-decoration grass-one"></div>
+            <div class="ground-decoration grass-two"></div>
+            <div class="ground-decoration flower-one"></div>
+
+            <div class="tree" id="tree" role="button" tabindex="0"
+                 aria-label="Árbol, nivel seleccionable">
+                <div class="tree-shadow"></div>
+                <div class="canopy" id="canopy"></div>
+
+                <div class="number-plate">
+                    <span id="number">8</span>
+                </div>
+
+                <div class="trunk" id="trunk"></div>
+                <div class="island" id="island"></div>
+            </div>
+
+            <div class="particle particle-one"></div>
+            <div class="particle particle-two"></div>
+            <div class="particle particle-three"></div>
+        </section>
+
+        <footer class="game-footer">
+            <div>
+                <span class="footer-label">ÁRBOL DE NIVEL</span>
+                <strong id="level-name">Bosque inicial</strong>
+            </div>
+            <button id="change" type="button">VER CONTENIDO<span>▶</span></button>
+        </footer>
+    </main>
+</body>
+</html>

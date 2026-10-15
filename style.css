@@ -1,0 +1,597 @@
+
+/* ==========================================
+   CAMINO VERDE - ESTILOS GENERALES
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #245c3a;
+}
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.game-header {
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    min-height: 110px;
+    padding: 12px 5%;
+
+    background: #245c3a;
+    border-bottom: 6px solid #163f2b;
+}
+
+.logo {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+}
+
+.titulo {
+    color: #f4f5c5;
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(13px, 2.3vw, 25px);
+    line-height: 1.8;
+    text-align: center;
+    text-shadow: 4px 4px #153e29;
+}
+
+/* ==========================================
+   ESCENARIO DEL JARDÍN
+========================================== */
+
+.garden {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: calc(100vh - 110px);
+    min-height: calc(100svh - 110px);
+    overflow: hidden;
+    background: #8bd8e8;
+}
+
+/* Cielo */
+
+.sky {
+    position: absolute;
+    z-index: -3;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        #75cce8 0%,
+        #a2e4e6 48%,
+        #d3f2d5 100%
+    );
+}
+
+/* Colinas */
+
+.distant-hills {
+    position: absolute;
+    z-index: -2;
+    left: -5%;
+    bottom: 35%;
+    width: 110%;
+    height: 25%;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 100%,
+            #8bcf9a 0 34%,
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 48% 100%,
+            #a0dda0 0 40%,
+            transparent 41%
+        ),
+        radial-gradient(
+            ellipse at 85% 100%,
+            #83ca91 0 37%,
+            transparent 38%
+        );
+}
+
+/* Césped */
+
+.lawn {
+    position: absolute;
+    z-index: -1;
+    inset: 61% 0 0;
+
+    background-color: #63bc63;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 94%,
+            rgba(36, 135, 66, 0.15) 94%
+        ),
+        linear-gradient(
+            transparent 94%,
+            rgba(36, 135, 66, 0.15) 94%
+        ),
+        linear-gradient(
+            0deg,
+            #58ae56,
+            #78ce69 48%,
+            #82d471
+        );
+
+    background-size: 16px 16px, 16px 16px, 100% 100%;
+}
+
+/* Tierra en bloques */
+
+.lawn::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12%;
+
+    background: repeating-linear-gradient(
+        90deg,
+        #80583f 0 16px,
+        #986747 16px 32px,
+        #704b38 32px 48px
+    );
+}
+
+/* ==========================================
+   ELEMENTOS DECORATIVOS
+========================================== */
+
+.garden-decor,
+.ambient-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.garden-decor {
+    z-index: 1;
+}
+
+.ambient-particles {
+    z-index: 2;
+}
+
+.pixel {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    image-rendering: pixelated;
+}
+
+/* Arbustos */
+
+.bush {
+    background: #267447;
+
+    box-shadow:
+        8px -8px #398e4b,
+        16px -8px #398e4b,
+        24px -8px #398e4b,
+        32px 0 #398e4b,
+        -8px 0 #398e4b,
+        0 -8px #56b95d,
+        8px -16px #56b95d,
+        16px -16px #56b95d,
+        24px -16px #56b95d,
+        32px -8px #56b95d,
+        40px 0 #267447,
+        -8px 8px #267447,
+        0 8px #398e4b,
+        8px 8px #398e4b,
+        16px 8px #267447,
+        24px 8px #267447,
+        32px 8px #267447,
+        40px 8px #267447,
+        8px 0 #80d66b,
+        16px 0 #56b95d,
+        24px 0 #398e4b;
+}
+
+/* Flores */
+
+.flower {
+    background: #4b9850;
+
+    box-shadow:
+        0 8px #4b9850,
+        0 16px #34854b,
+        -8px 16px #34854b,
+        8px 16px #34854b;
+}
+
+.flower::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: -8px;
+    width: 8px;
+    height: 8px;
+    background: var(--petal);
+
+    box-shadow:
+        8px -8px var(--petal),
+        16px 0 var(--petal),
+        8px 8px var(--petal);
+}
+
+.flower::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--center);
+}
+
+/* Rocas */
+
+.rock {
+    background: #8799a0;
+
+    box-shadow:
+        8px -8px #aebdc0,
+        16px -8px #8799a0,
+        24px 0 #73878c,
+        -8px 0 #73878c,
+        0 -8px #c4d0cb,
+        8px 0 #aebdc0,
+        16px 0 #8799a0,
+        0 8px #73878c,
+        8px 8px #8799a0,
+        16px 8px #73878c;
+}
+
+/* Hongos */
+
+.mushroom {
+    background: #f3e7c1;
+
+    box-shadow:
+        0 8px #f3e7c1,
+        8px 8px #f3e7c1,
+        16px 8px #f3e7c1,
+        8px 16px #d7b58a,
+        8px 24px #438c4d;
+}
+
+.mushroom::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 8px;
+    height: 8px;
+    background: #e65f66;
+
+    box-shadow:
+        8px -8px #e65f66,
+        16px -8px #e65f66,
+        24px 0 #e65f66,
+        0 8px #e65f66,
+        8px 0 #ff8880,
+        16px 0 #ff8880;
+}
+
+/* Hierba */
+
+.grass {
+    background: #268c4b;
+
+    box-shadow:
+        -8px -8px #4caf50,
+        0 -16px #64c65b,
+        8px -8px #4caf50,
+        0 8px #268c4b;
+}
+
+/* Piedritas */
+
+.pebble {
+    background: var(--stone);
+
+    box-shadow:
+        8px 0 var(--stone),
+        0 8px var(--stone-dark),
+        8px 8px var(--stone-dark);
+}
+
+/* Animación ambiental */
+
+.bush,
+.flower,
+.rock,
+.mushroom,
+.grass {
+    animation: garden-breathe 3s ease-in-out infinite;
+}
+
+@keyframes garden-breathe {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -2px;
+    }
+}
+
+/* Partículas luminosas */
+
+.sparkle {
+    width: 4px;
+    height: 4px;
+    background: #fff6a5;
+
+    box-shadow:
+        4px 0 #fff6a5,
+        -4px 0 #fff6a5,
+        0 -4px #fff6a5,
+        0 4px #fff6a5;
+
+    animation: sparkle 2s steps(2, end) infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.2;
+        scale: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+        scale: 1.3;
+    }
+}
+
+/* ==========================================
+   CONTENIDO Y FORMULARIO
+========================================== */
+
+.page-content {
+    position: relative;
+    z-index: 5;
+
+    min-height: calc(100vh - 110px);
+    min-height: calc(100svh - 110px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    padding: 45px 20px 30px;
+}
+
+.form-card {
+    width: min(100%, 460px);
+    padding: 32px;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 225, 0.96);
+    color: #244b31;
+
+    border: 5px solid #38784a;
+    border-bottom: 9px solid #245c3a;
+    border-radius: 4px;
+
+    box-shadow:
+        8px 8px 0 rgba(27, 73, 43, 0.35),
+        inset 0 0 0 4px #e0edb4;
+}
+
+.form-icon {
+    margin-bottom: 18px;
+    color: #e58a9a;
+    font-size: 34px;
+    text-align: center;
+}
+
+.form-card h2 {
+    margin-bottom: 18px;
+    color: #245c3a;
+
+    font-family: "Press Start 2P", monospace;
+    font-size: 14px;
+    line-height: 1.9;
+    text-align: center;
+    text-shadow: none;
+}
+
+.form-description {
+    margin-bottom: 25px;
+    color: #58705a;
+
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #28583a;
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.form-group input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    box-sizing: border-box;
+
+    border: 3px solid #8dbb79;
+    border-radius: 3px;
+
+    background: #fff;
+    color: #244b31;
+
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(129, 199, 132, 0.35);
+}
+
+.form-group input::placeholder {
+    color: #96a696;
+}
+
+/* Botón */
+
+.btn-ingresar {
+    width: 100%;
+    min-height: 54px;
+    padding: 14px;
+
+    border: none;
+    border-bottom: 6px solid #24512e;
+    border-radius: 3px;
+
+    background: #62ae58;
+    color: white;
+
+    font-family: "Press Start 2P", monospace;
+    font-size: 12px;
+
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-ingresar:hover {
+    background: #438e49;
+    transform: translateY(-2px);
+}
+
+.btn-ingresar:active {
+    transform: translateY(3px);
+    border-bottom-width: 3px;
+}
+
+.btn-ingresar:focus-visible {
+    outline: 3px solid #e2a34b;
+    outline-offset: 4px;
+}
+
+.mensaje {
+    min-height: 18px;
+    margin-top: 16px;
+
+    color: #28583a;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.garden-footer {
+    color: white;
+    font-family: "Press Start 2P", monospace;
+    font-size: 9px;
+    line-height: 2;
+    text-align: center;
+    text-shadow: 2px 2px #245c3a;
+}
+
+/* ==========================================
+   ADAPTACIÓN A MÓVILES
+========================================== */
+
+@media (max-width: 600px) {
+    .game-header {
+        min-height: 85px;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .logo {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+
+    .titulo {
+        font-size: clamp(9px, 3vw, 15px);
+    }
+
+    .garden {
+        min-height: calc(100vh - 85px);
+        min-height: calc(100svh - 85px);
+    }
+
+    .page-content {
+        min-height: calc(100vh - 85px);
+        min-height: calc(100svh - 85px);
+        padding: 30px 16px 25px;
+    }
+
+    .form-card {
+        padding: 24px 19px;
+    }
+
+    .form-card h2 {
+        font-size: 11px;
+    }
+
+    .form-group label {
+        font-size: 9px;
+    }
+
+    .garden-footer {
+        font-size: 8px;
+    }
+}
+
+/* Respetar las preferencias de movimiento */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+
+

@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CAMINO VERDE | Jardín</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="jardin.css">
+    <script src="jardin.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO INSTITUCIONAL -->
+    <header class="game-header">
+        <img
+            src="imágenes/Pixel-Art_1967_Crest_Emblem-removebg-preview.png"
+            alt="Escudo institucional"
+            class="logo"
+        >
+
+        <h1 class="titulo">CAMINO VERDE</h1>
+
+        <img
+            src="imágenes/WhatsApp_Image_2026-10-15_at_3.33.32_PM-removebg-preview.png"
+            alt="Logo Camino Verde"
+            class="logo"
+        >
+    </header>
+
+    <main class="jardin">
+
+        <div class="titulo-mapa">
+            <span>✦</span>
+            <h2>EL JARDÍN DE LOS NIVELES</h2>
+            <span>✦</span>
+        </div>
+
+        <p class="instruccion">
+            Elige un árbol para comenzar tu aventura
+        </p>
+
+        <!-- MAPA PRINCIPAL -->
+        <section
+            class="mapa"
+            id="mapa"
+            aria-label="Mapa de los 13 niveles"
+        >
+
+            <!-- DECORACIONES -->
+            <div class="decoracion decoracion-1">✿</div>
+            <div class="decoracion decoracion-2">❀</div>
+            <div class="decoracion decoracion-3">✦</div>
+            <div class="decoracion decoracion-4">✿</div>
+
+            <!-- CAMINO SERPENTEANTE -->
+            <svg
+                class="camino-mapa"
+                viewBox="0 0 1000 650"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+                <path
+                    class="borde-camino"
+                    d="M 100,80
+                       C 250,80 350,80 500,80
+                       S 800,80 900,80
+                       C 980,80 950,170 850,190
+                       S 600,190 500,190
+                       S 200,190 100,190
+                       C 20,190 30,300 130,300
+                       S 400,300 500,300
+                       S 800,300 900,300
+                       C 980,300 960,410 850,410
+                       S 600,410 500,410
+                       S 200,410 100,410
+                       C 20,410 30,530 150,530
+                       S 400,530 500,530
+                       S 800,530 900,530"
+                />
+
+                <path
+                    class="relleno-camino"
+                    d="M 100,80
+                       C 250,80 350,80 500,80
+                       S 800,80 900,80
+                       C 980,80 950,170 850,190
+                       S 600,190 500,190
+                       S 200,190 100,190
+                       C 20,190 30,300 130,300
+                       S 400,300 500,300
+                       S 800,300 900,300
+                       C 980,300 960,410 850,410
+                       S 600,410 500,410
+                       S 200,410 100,410
+                       C 20,410 30,530 150,530
+                       S 400,530 500,530
+                       S 800,530 900,530"
+                />
+            </svg>
+
+            <!-- LOS 13 ÁRBOLES SE CREAN CON JAVASCRIPT -->
+            <div class="arboles" id="arboles"></div>
+
+            <!-- CARTEL -->
+            <div class="cartel">
+                <span>🌿</span>
+                <strong>Tu aventura comienza aquí</strong>
+                <span>🌿</span>
+            </div>
+
+        </section>
+
+        <!-- PIE DEL JARDÍN -->
+        <footer class="pie">
+            <span class="indicador"></span>
+            <p>13 árboles · 13 niveles · Un mundo por descubrir</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>

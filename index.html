@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>CAMINO VERDE -Formulario de Estudiante</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="game-header">
+        <img
+            src="imágenes/Pixel-Art_1967_Crest_Emblem-removebg-preview.png"
+            alt="Escudo institucional"
+            class="logo"
+        >
+
+        <h1 class="titulo">CAMINO VERDE</h1>
+
+        <img
+            src="imágenes/WhatsApp_Image_2026-10-15_at_3.33.32_PM-removebg-preview.png"
+            alt="Logo Camino Verde"
+            class="logo"
+        >
+    </header>
+
+    <main class="garden" id="garden">
+
+        <div class="sky"></div>
+        <div class="distant-hills"></div>
+        <div class="lawn"></div>
+
+        <div class="garden-decor" id="gardenDecor"></div>
+        <div class="ambient-particles" id="particles"></div>
+
+        <section class="page-content">
+
+            <div class="form-card">
+
+                <div class="form-icon" aria-hidden="true">✿</div>
+
+                <h2>FORMULARIO DE INGRESO</h2>
+
+                <p class="form-description">
+                    ¡Bienvenido a Camino Verde!
+                    Ingresa tus datos para comenzar.
+                </p>
+
+                <form id="formEstudiante">
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Escribe tu nombre"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grado">Grado escolar</label>
+                        <input
+                            type="text"
+                            id="grado"
+                            name="grado"
+                            placeholder="Ej. 11°"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn-ingresar">
+                        INGRESAR
+                    </button>
+
+                    <p id="mensaje" class="mensaje" aria-live="polite"></p>
+
+                </form>
+            </div>
+
+            <footer class="garden-footer">
+                CAMINO VERDE · UN MUNDO POR DESCUBRIR
+            </footer>
+
+        </section>
+    </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

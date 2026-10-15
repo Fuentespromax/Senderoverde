@@ -1,0 +1,1505 @@
+
+/* =========================================
+   CAMINO VERDE — JARDÍN PIXEL ART
+   Hoja de estilos limpia y organizada
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --verde-oscuro: #164d32;
+    --verde-medio: #3b9149;
+    --verde-claro: #79bd55;
+    --verde-luz: #a7df6c;
+    --tierra: #e4bd7c;
+    --tierra-borde: #a87943;
+    --crema: #fff1c6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: #173d2b;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--verde-oscuro);
+    font-family: "Press Start 2P", monospace;
+
+    background:
+        radial-gradient(
+            ellipse at top,
+            #367b4a,
+            #173d2b 75%
+        );
+}
+
+/* =========================================
+   ENCABEZADO INSTITUCIONAL
+========================================= */
+
+.game-header {
+    width: 100%;
+    min-height: 120px;
+    padding: 14px 5%;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    background: linear-gradient(
+        135deg,
+        #123b2b,
+        #205b3d,
+        #123b2b
+    );
+
+    border-bottom: 4px solid #8bcf62;
+}
+
+.game-header .logo {
+    display: block;
+    width: 100px;
+    height: 100px;
+    max-width: 18%;
+    flex: 0 0 100px;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+.game-header .titulo {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+
+    color: #e4f6bd;
+    font-size: clamp(14px, 2.5vw, 30px);
+    line-height: 1.6;
+    text-align: center;
+
+    text-shadow:
+        3px 3px 0 #102c20,
+        0 0 12px rgba(139, 207, 98, .25);
+}
+
+/* Encabezado secundario, si se conserva en el HTML */
+
+.encabezado {
+    width: min(100%, 1100px);
+    margin: auto;
+    padding: 20px 16px 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    text-align: left;
+    color: var(--crema);
+}
+
+.insignia {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+
+    font-size: 30px;
+    background: #28673d;
+    border: 4px solid #b3e477;
+    box-shadow: 5px 5px 0 #102c20;
+}
+
+.encabezado h1 {
+    margin: 0 0 10px;
+    font-size: clamp(15px, 2.8vw, 27px);
+    line-height: 1.6;
+    text-shadow: 3px 3px #102c20;
+}
+
+.encabezado p {
+    margin: 0;
+    color: #d6f2b7;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* =========================================
+   CONTENIDO DEL JARDÍN
+========================================= */
+
+.jardin {
+    width: min(100%, 1200px);
+    margin: auto;
+    padding: 12px 18px 28px;
+}
+
+.titulo-mapa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    color: #f9e6a9;
+    text-align: center;
+}
+
+.titulo-mapa h2 {
+    margin: 12px 0;
+    font-size: clamp(10px, 1.5vw, 15px);
+    line-height: 1.8;
+}
+
+.titulo-mapa span {
+    color: #d5ed79;
+    font-size: 18px;
+}
+
+.instruccion {
+    margin: 10px 0 18px;
+    color: #e2f4cb;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* =========================================
+   MAPA Y CÉSPED PIXEL ART
+========================================= */
+
+
+/* =========================================
+   CAMINO VERDE — CÉSPED PIXEL ART
+========================================= */
+
+.mapa {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background-color: #80c957;
+
+    background-image:
+        /* Pequeños grupos de píxeles claros */
+        radial-gradient(
+            circle,
+            #b0e77a 0 2px,
+            transparent 2.5px
+        ),
+
+        /* Píxeles de sombra */
+        radial-gradient(
+            circle,
+            #5ca64a 0 2px,
+            transparent 2.5px
+        ),
+
+        /* Manchas irregulares de hierba */
+        radial-gradient(
+            ellipse at center,
+            #70b84f 0 20%,
+            transparent 23%
+        ),
+
+        /* Franjas sutiles de luz */
+        linear-gradient(
+            115deg,
+            transparent 0 20%,
+            rgba(193, 235, 126, .20) 22% 27%,
+            transparent 30% 65%,
+            rgba(51, 132, 59, .12) 68% 73%,
+            transparent 76%
+        ),
+
+        /* Color base del terreno */
+        linear-gradient(
+            180deg,
+            #91d466,
+            #7dc454 55%,
+            #88ce5b
+        );
+
+    background-size:
+        31px 29px,
+        47px 43px,
+        137px 109px,
+        100% 100%,
+        100% 100%;
+
+    background-position:
+        3px 7px,
+        18px 21px,
+        9px 14px,
+        center,
+        center;
+
+    border: 5px solid #b1e477;
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 0 #173d2b,
+        inset 0 0 0 5px rgba(39, 103, 47, .18);
+}
+
+/* Parches de césped con bordes pixelados */
+
+.mapa::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0 7%,
+            #70b84e 7% 10%,
+            transparent 10% 13%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 0 70%,
+            #a0db66 70% 74%,
+            transparent 74% 78%
+        ),
+        linear-gradient(
+            0deg,
+            transparent 0 15%,
+            rgba(50, 127, 54, .15) 15% 18%,
+            transparent 18% 100%
+        );
+
+    opacity: .7;
+}
+
+/* Brillitos discretos del terreno */
+
+.mapa::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(#d3f19a 2px, transparent 2px),
+        linear-gradient(90deg, #d3f19a 2px, transparent 2px);
+
+    background-size: 37px 37px;
+    background-position: 13px 19px;
+
+    mask-image: radial-gradient(
+        ellipse,
+        black 0 25%,
+        transparent 75%
+    );
+
+    opacity: .16;
+}
+
+/* Capas correctas */
+
+.mapa .camino-mapa {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.mapa .arboles {
+    position: relative;
+    z-index: 3;
+}
+
+.mapa .adorno-jardin,
+.mapa .decoracion {
+    z-index: 2;
+}
+
+.mapa .cartel {
+    z-index: 4;
+}
+
+
+/* Parches irregulares sobre el césped */
+
+.mapa::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 25%,
+            rgba(65, 145, 57, .22) 0 3%,
+            transparent 3.5%
+        ),
+        radial-gradient(
+            ellipse at 75% 35%,
+            rgba(185, 229, 115, .35) 0 5%,
+            transparent 5.5%
+        ),
+        radial-gradient(
+            ellipse at 35% 75%,
+            rgba(65, 145, 57, .18) 0 4%,
+            transparent 4.5%
+        ),
+        radial-gradient(
+            ellipse at 90% 82%,
+            rgba(185, 229, 115, .28) 0 4%,
+            transparent 4.5%
+        );
+}
+
+/* =========================================
+   CAMINO SERPENTEANTE
+========================================= */
+
+.camino-mapa {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+    pointer-events: none;
+}
+
+.borde-camino {
+    fill: none;
+    stroke: #a87943;
+    stroke-width: 53;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.relleno-camino {
+    fill: none;
+    stroke: #e4bd7c;
+    stroke-width: 43;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* =========================================
+   ÁRBOLES INTERACTIVOS
+========================================= */
+
+.arboles {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(135px, auto));
+
+    gap: 16px 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.arbol {
+    --copa: #287b35;
+    --copa-luz: #79d451;
+    --copa-sombra: #174f30;
+    --tronco: #87502c;
+
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 135px;
+    padding: 0 0 2px;
+
+    color: #173e25;
+    font: inherit;
+    background: transparent;
+    border: 0;
+
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        transform .2s steps(3),
+        filter .2s ease;
+}
+
+.arbol:hover,
+.arbol:focus-visible {
+    z-index: 5;
+    transform: translateY(-6px) scale(1.06);
+    filter: brightness(1.12);
+}
+
+.arbol:focus-visible {
+    outline: 2px dashed white;
+    outline-offset: 4px;
+}
+
+/* Sombra del árbol */
+
+.sombra-arbol {
+    position: absolute;
+    bottom: 22px;
+    z-index: 0;
+
+    width: 76px;
+    max-width: 90%;
+    height: 13px;
+
+    background: #398b3b;
+    border-radius: 50%;
+
+    box-shadow:
+        0 4px 0 #66a94a,
+        -7px 2px 0 -2px #398b3b,
+        7px 2px 0 -2px #398b3b;
+}
+
+/* Tronco */
+
+.tronco {
+    position: relative;
+    z-index: 1;
+
+    width: 20px;
+    height: 35px;
+    margin-top: -2px;
+
+    background: linear-gradient(
+        90deg,
+        #60391f 0 18%,
+        #a66b3b 18% 35%,
+        #87502c 35% 68%,
+        #b77b43 68% 82%,
+        #60391f 82% 100%
+    );
+
+    border: 3px solid #58351f;
+    box-shadow: 3px 2px 0 #4d6c34;
+}
+
+.tronco::before,
+.tronco::after {
+    content: "";
+    position: absolute;
+    top: -9px;
+
+    width: 10px;
+    height: 8px;
+
+    background: #87502c;
+    border-top: 3px solid #58351f;
+}
+
+.tronco::before {
+    left: -8px;
+    border-left: 3px solid #58351f;
+    transform: rotate(-25deg);
+}
+
+.tronco::after {
+    right: -8px;
+    border-right: 3px solid #58351f;
+    transform: rotate(25deg);
+}
+
+/* Copa pixelada */
+
+.copa {
+    position: relative;
+    z-index: 2;
+
+    width: 72px;
+    height: 59px;
+    margin-bottom: -2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0 12%,
+            var(--copa-luz) 12% 24%,
+            transparent 24% 66%,
+            var(--copa-sombra) 66% 84%,
+            transparent 84%
+        ),
+        linear-gradient(
+            180deg,
+            var(--copa-luz) 0 18%,
+            var(--copa) 18% 72%,
+            var(--copa-sombra) 72% 100%
+        );
+
+    border: 4px solid #194e2c;
+
+    image-rendering: pixelated;
+
+    box-shadow:
+        -9px 7px 0 -3px var(--copa),
+        9px 7px 0 -3px var(--copa),
+        -7px -5px 0 -2px var(--copa-luz),
+        7px -6px 0 -2px var(--copa-luz),
+        0 -10px 0 -5px var(--copa-luz),
+        inset 5px 5px 0 rgba(255, 255, 160, .15),
+        inset -6px -7px 0 rgba(0, 0, 0, .13);
+}
+
+/* Brillos de las hojas */
+
+.copa::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 7px;
+
+    width: 9px;
+    height: 9px;
+
+    background: #c1f477;
+
+    box-shadow:
+        13px 5px 0 -2px var(--copa-luz),
+        22px 17px 0 -3px #a8e965,
+        36px 8px 0 -2px var(--copa-luz),
+        43px 24px 0 -2px var(--copa-sombra),
+        27px 34px 0 -3px var(--copa-luz),
+        -5px 22px 0 -3px var(--copa-sombra);
+}
+
+.copa::after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    right: -9px;
+
+    width: 8px;
+    height: 12px;
+
+    background: var(--copa-luz);
+
+    box-shadow:
+        -62px 15px 0 var(--copa),
+        -51px -15px 0 -2px var(--copa-sombra),
+        -10px 29px 0 -2px var(--copa-luz);
+}
+
+/* Placa del nivel */
+
+.numero {
+    position: relative;
+    z-index: 3;
+
+    min-width: 45px;
+    margin-top: 2px;
+    padding: 8px 6px;
+
+    color: #173c25;
+    background: #ffe09a;
+    border: 3px solid #75502c;
+
+    box-shadow:
+        3px 3px 0 #a07842,
+        5px 5px 0 rgba(36, 72, 34, .25);
+
+    font-size: 10px;
+    text-align: center;
+}
+
+.arbol:hover .numero {
+    background: #fff2bd;
+}
+
+.nombre-nivel {
+    position: relative;
+    z-index: 3;
+
+    margin-top: 7px;
+    padding-top: 2px;
+
+    color: #174526;
+    font-size: 8px;
+    line-height: 1.8;
+    text-align: center;
+    text-shadow: 1px 1px #b9e77b;
+}
+
+/* Colores variados: se conserva el orden de los 13 niveles */
+
+.arbol:nth-child(1) {
+    --copa: #26733a;
+    --copa-luz: #79d451;
+    --copa-sombra: #174f30;
+}
+
+.arbol:nth-child(2) {
+    --copa: #d76ca7;
+    --copa-luz: #ffc4df;
+    --copa-sombra: #a84e82;
+}
+
+.arbol:nth-child(3) {
+    --copa: #348f43;
+    --copa-luz: #80d354;
+    --copa-sombra: #205e31;
+}
+
+.arbol:nth-child(4) {
+    --copa: #d88c2d;
+    --copa-luz: #ffd052;
+    --copa-sombra: #985a22;
+}
+
+.arbol:nth-child(5),
+.arbol:nth-child(10) {
+    --copa: #8964c8;
+    --copa-luz: #c6a1f0;
+    --copa-sombra: #5d438f;
+}
+
+.arbol:nth-child(6) {
+    --copa: #178e9c;
+    --copa-luz: #55d4d2;
+    --copa-sombra: #10616e;
+}
+
+.arbol:nth-child(7),
+.arbol:nth-child(11) {
+    --copa: #91b633;
+    --copa-luz: #d7ed69;
+    --copa-sombra: #587c29;
+}
+
+.arbol:nth-child(8) {
+    --copa: #438d37;
+    --copa-luz: #9cde53;
+    --copa-sombra: #28602c;
+}
+
+.arbol:nth-child(9) {
+    --copa: #e889ba;
+    --copa-luz: #ffc4dc;
+    --copa-sombra: #a84e82;
+}
+
+.arbol:nth-child(12) {
+    --copa: #c93636;
+    --copa-luz: #ff7670;
+    --copa-sombra: #862b32;
+}
+
+.arbol:nth-child(13) {
+    --copa: #398bdb;
+    --copa-luz: #91d9ff;
+    --copa-sombra: #235a9a;
+}
+
+/* =========================================
+   FLORES Y ELEMENTOS DECORATIVOS
+========================================= */
+
+.decoracion,
+.adorno-jardin {
+    position: absolute;
+    pointer-events: none;
+}
+
+.decoracion {
+    z-index: 3;
+    color: #fff6b4;
+    font-size: 23px;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.decoracion-1 {
+    top: 12%;
+    left: 8%;
+}
+
+.decoracion-2 {
+    top: 33%;
+    right: 10%;
+    animation-delay: .5s;
+}
+
+.decoracion-3 {
+    bottom: 14%;
+    left: 24%;
+    animation-delay: 1s;
+}
+
+.decoracion-4 {
+    bottom: 24%;
+    right: 25%;
+    animation-delay: 1.5s;
+}
+
+/* Estos estilos sirven si jardin.js crea estos adornos */
+
+.adorno-jardin {
+    z-index: 2;
+    display: block;
+    image-rendering: pixelated;
+}
+
+.flor {
+    width: 9px;
+    height: 9px;
+    background: #fff1a5;
+
+    box-shadow:
+        0 -6px 0 -1px currentColor,
+        0 6px 0 -1px currentColor,
+        -6px 0 0 -1px currentColor,
+        6px 0 0 -1px currentColor,
+        0 0 0 2px #f7df76;
+
+    animation: flor-baila 3s steps(3) infinite;
+    animation-delay: var(--retraso, 0s);
+}
+
+.flor-amarilla {
+    color: #ffed83;
+    background: #b66b30;
+}
+
+.flor-rosa {
+    color: #ffb3d8;
+    background: #ffe7f2;
+}
+
+.flor-blanca {
+    color: #fffbe0;
+    background: #e8c46a;
+}
+
+.flor-azul {
+    color: #92e6f2;
+    background: #fff1a5;
+}
+
+.roca {
+    width: 20px;
+    height: 11px;
+    background: #829a84;
+    border: 2px solid #526e55;
+
+    box-shadow:
+        -5px 3px 0 -2px #526e55,
+        4px 4px 0 -2px #526e55,
+        inset 4px 0 0 #b9cf9e,
+        inset 0 -3px 0 #6b806d;
+}
+
+.hongo {
+    width: 17px;
+    height: 14px;
+}
+
+.hongo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 16px;
+    height: 7px;
+
+    background: #d94f4f;
+    border: 2px solid #853535;
+    box-shadow: inset 3px 0 #ff9b77;
+}
+
+.hongo::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 6px;
+
+    width: 5px;
+    height: 7px;
+
+    background: #f6e8b9;
+    border: 1px solid #b7a67b;
+}
+
+.hierba {
+    width: 22px;
+    height: 19px;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 35%,
+            #347c39 36% 47%,
+            transparent 48%
+        ),
+        linear-gradient(
+            65deg,
+            transparent 35%,
+            #58a944 36% 53%,
+            transparent 54%
+        ),
+        linear-gradient(
+            100deg,
+            transparent 48%,
+            #a2db62 49% 60%,
+            transparent 61%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 43%,
+            #438c3b 44% 55%,
+            transparent 56%
+        );
+}
+
+.piedritas {
+    width: 22px;
+    height: 9px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #879e7b 0 6px,
+            transparent 6px 9px,
+            #b3c99a 9px 15px,
+            transparent 15px 17px,
+            #6b8d69 17px 22px
+        );
+
+    box-shadow: 0 3px 0 -1px #55764e;
+
+}
+
+
+/* =========================================
+   AJUSTE DE ADORNOS DEL JARDÍN
+========================================= */
+
+.mapa {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.adorno-jardin {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    z-index: 2;
+    
+    /* Evita que los adornos parezcan flotar */
+    transform: translate(-50%, -50%);
+}
+
+/* Las flores quedan plantadas sobre el césped */
+.adorno-jardin.flor {
+    margin-top: 5px;
+    transform-origin: center bottom;
+    animation: flor-baila 3s steps(2) infinite;
+    animation-delay: var(--retraso, 0s);
+}
+
+/* Piedras apoyadas sobre el terreno */
+.adorno-jardin.roca,
+.adorno-jardin.piedritas {
+    margin-top: 7px;
+}
+
+/* Honguitos con su base en el suelo */
+.adorno-jardin.hongo {
+    margin-top: 7px;
+    transform-origin: center bottom;
+}
+
+/* El pasto decorativo nace desde abajo */
+.adorno-jardin.hierba {
+    margin-top: 8px;
+    transform-origin: center bottom;
+}
+
+/* Movimiento pequeño, no de levitación */
+@keyframes flor-baila {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -1px;
+    }
+}
+
+
+/* Cartel inferior */
+
+.cartel {
+    position: absolute;
+    z-index: 4;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: max-content;
+    max-width: calc(100% - 20px);
+    padding: 12px 15px;
+
+    color: #164d32;
+    background: #f6d68a;
+    border: 3px solid #744d2b;
+
+    box-shadow: 4px 4px 0 #4d7537;
+
+    font-size: clamp(7px, 1vw, 10px);
+    text-align: center;
+}
+
+/* Pie de página */
+
+.pie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 25px;
+
+    color: #e2f4cb;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.pie p {
+    line-height: 1.6;
+}
+
+.indicador {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+
+    background: #b3e477;
+    box-shadow: 0 0 12px #b3e477;
+
+    animation: brillar 1.5s infinite alternate;
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes brillar {
+    from {
+        opacity: .45;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes flor-baila {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 700px) {
+    .game-header {
+        min-height: 95px;
+        padding: 12px 3%;
+        gap: 12px;
+    }
+
+    .game-header .logo {
+        width: 70px;
+        height: 70px;
+        max-width: 20%;
+        flex-basis: 70px;
+    }
+
+    .game-header .titulo {
+        font-size: clamp(11px, 2.5vw, 18px);
+    }
+
+    .jardin {
+        padding: 12px 12px 24px;
+    }
+
+    .mapa {
+        min-height: 620px;
+        padding: 22px 10px 85px;
+    }
+
+    .arboles {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-rows: repeat(4, minmax(112px, auto));
+        gap: 10px 4px;
+    }
+
+    /* Recorrido serpenteante de los niveles */
+    .arbol:nth-child(n) {
+        grid-area: auto;
+    }
+
+    .arbol:nth-child(1)  { grid-area: 1 / 1; }
+    .arbol:nth-child(2)  { grid-area: 1 / 2; }
+    .arbol:nth-child(3)  { grid-area: 1 / 3; }
+    .arbol:nth-child(4)  { grid-area: 1 / 4; }
+
+    .arbol:nth-child(5)  { grid-area: 2 / 4; }
+    .arbol:nth-child(6)  { grid-area: 2 / 3; }
+    .arbol:nth-child(7)  { grid-area: 2 / 2; }
+    .arbol:nth-child(8)  { grid-area: 2 / 1; }
+
+    .arbol:nth-child(9)  { grid-area: 3 / 1; }
+    .arbol:nth-child(10) { grid-area: 3 / 2; }
+    .arbol:nth-child(11) { grid-area: 3 / 3; }
+    .arbol:nth-child(12) { grid-area: 3 / 4; }
+
+    .arbol:nth-child(13) {
+        grid-area: 4 / 2 / 5 / 4;
+    }
+
+    .arbol {
+        min-height: 112px;
+    }
+
+    .copa {
+        width: 57px;
+        height: 49px;
+    }
+
+    .tronco {
+        width: 16px;
+        height: 29px;
+    }
+
+    .nombre-nivel {
+        font-size: 7px;
+    }
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 420px) {
+    .game-header {
+        min-height: 78px;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .game-header .logo {
+        width: 48px;
+        height: 48px;
+        max-width: 17%;
+        flex-basis: 48px;
+    }
+
+    .game-header .titulo {
+        font-size: clamp(9px, 3vw, 13px);
+        line-height: 1.5;
+    }
+
+    .encabezado {
+        gap: 10px;
+        padding-top: 16px;
+    }
+
+    .insignia {
+        width: 43px;
+        height: 43px;
+        font-size: 23px;
+    }
+
+    .encabezado h1 {
+        font-size: 13px;
+    }
+
+    .encabezado p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .mapa {
+        min-height: 590px;
+        padding: 18px 4px 78px;
+        border-width: 4px;
+    }
+
+    .arboles {
+        gap: 8px 2px;
+    }
+
+    .arbol {
+        min-height: 105px;
+    }
+
+    .copa {
+        width: 45px;
+        height: 42px;
+        border-width: 3px;
+    }
+
+    .tronco {
+        width: 15px;
+        height: 25px;
+    }
+
+    .sombra-arbol {
+        width: 54px;
+        height: 9px;
+    }
+
+    .numero {
+        min-width: 35px;
+        padding: 7px 4px;
+        font-size: 9px;
+        border-width: 2px;
+    }
+
+    .nombre-nivel {
+        font-size: 6px;
+        overflow-wrap: anywhere;
+    }
+
+    .cartel {
+        gap: 5px;
+        padding: 10px 7px;
+        font-size: 7px;
+    }
+
+    .pie {
+        font-size: 11px;
+    }
+}
+
+/* Accesibilidad: respetar preferencias de movimiento */
+
+@media (prefers-reduced-motion: reduce) {
+    .arbol,
+    .decoracion,
+    .flor,
+    .indicador {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* Mechones de césped más definidos */
+
+.hierba {
+    width: 22px;
+    height: 19px;
+
+    background:
+        linear-gradient(
+            125deg,
+            transparent 38%,
+            #347a35 39% 52%,
+            transparent 53%
+        ),
+        linear-gradient(
+            65deg,
+            transparent 30%,
+            #58ae42 31% 49%,
+            transparent 50%
+        ),
+        linear-gradient(
+            100deg,
+            transparent 47%,
+            #b1e56b 48% 61%,
+            transparent 62%
+        );
+
+    image-rendering: pixelated;
+    filter: drop-shadow(2px 2px 0 rgba(38, 91, 37, .2));
+}
+
+/* Flores con pequeños pétalos cuadrados */
+
+.flor {
+    width: 7px;
+    height: 7px;
+
+    box-shadow:
+        0 -6px 0 0 currentColor,
+        0 6px 0 0 currentColor,
+        -6px 0 0 0 currentColor,
+        6px 0 0 0 currentColor,
+        0 0 0 2px #fff1a5,
+        3px 3px 0 -1px rgba(62, 100, 42, .35);
+
+    image-rendering: pixelated;
+}
+
+/* Piedras con volumen */
+
+.roca {
+    border-radius: 0;
+    box-shadow:
+        -4px 3px 0 -1px #526e55,
+        4px 4px 0 -1px #526e55,
+        inset 3px 0 #b9cf9e,
+        inset 0 -3px #647e62;
+}
+
+/* Las decoraciones no deben interceptar clics */
+
+.adorno-jardin,
+.decoracion {
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CÉSPED VIVO ESTILO VIDEOJUEGO
+========================================= */
+
+.adorno-jardin.hierba {
+    width: 20px;
+    height: 18px;
+    background:
+        linear-gradient(
+            125deg,
+            transparent 0 32%,
+            #286c32 33% 46%,
+            transparent 47%
+        ),
+        linear-gradient(
+            65deg,
+            transparent 0 28%,
+            #4d9c3b 29% 47%,
+            transparent 48%
+        ),
+        linear-gradient(
+            100deg,
+            transparent 0 48%,
+            #b4e96b 49% 61%,
+            transparent 62%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 0 42%,
+            #397d34 43% 56%,
+            transparent 57%
+        );
+    image-rendering: pixelated;
+    filter: drop-shadow(2px 2px 0 rgba(37, 83, 35, 0.35));
+}
+
+/* Pequeños píxeles de vegetación */
+.mapa {
+    background-color: #80c957;
+    background-image:
+        radial-gradient(
+            #b7e878 0 2px,
+            transparent 2.5px
+        ),
+        radial-gradient(
+            #4e9d40 0 2px,
+            transparent 2.5px
+        ),
+        linear-gradient(
+            180deg,
+            #91d466,
+            #79bf51 60%,
+            #88ce5b
+        );
+    background-size:
+        43px 37px,
+        57px 49px,
+        100% 100%;
+    background-position:
+        5px 8px,
+        21px 17px,
+        center;
+}
+
+
+/* ==========================================
+   CAMINO VERDE — AJUSTE FINAL DEL JARDÍN
+========================================== */
+
+/* Altura estable para que el camino y los adornos
+   se posicionen correctamente */
+.mapa {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    min-height: 680px;
+    padding: 22px 12px 85px;
+}
+
+/* Los árboles quedan por encima del césped */
+.mapa .arboles {
+    position: relative;
+    z-index: 3;
+}
+
+/* Adornos apoyados visualmente sobre el terreno */
+.mapa .adorno-jardin {
+    position: absolute;
+    display: block;
+    z-index: 2;
+    pointer-events: none;
+    image-rendering: pixelated;
+    transform: translate(-50%, -50%);
+}
+
+/* Flores pixeladas */
+.mapa .adorno-jardin.flor {
+    width: 7px;
+    height: 7px;
+    margin-top: 7px;
+
+    box-shadow:
+        0 -6px 0 0 currentColor,
+        0 6px 0 0 currentColor,
+        -6px 0 0 0 currentColor,
+        6px 0 0 0 currentColor,
+        0 0 0 2px #fff1a5,
+        3px 3px 0 -1px rgba(62, 100, 42, .35);
+
+    animation: flor-pixel 3s steps(2, end) infinite;
+    animation-delay: var(--retraso, 0s);
+}
+
+/* Movimiento casi imperceptible: las flores no levitan */
+@keyframes flor-pixel {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -1px;
+    }
+}
+
+/* Hierba con bloques de colores y alturas distintas */
+.mapa .adorno-jardin.hierba {
+    width: 24px;
+    height: 18px;
+    margin-top: 9px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0 8%,
+            #286c32 8% 25%,
+            transparent 25% 33%,
+            #4d9c3b 33% 50%,
+            transparent 50% 58%,
+            #b4e96b 58% 75%,
+            transparent 75%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 17%,
+            #397d34 17% 42%,
+            transparent 42% 50%,
+            #58ae42 50% 83%,
+            transparent 83%
+        );
+
+    background-size: 100% 100%, 100% 65%;
+    background-position: center bottom, center bottom;
+    background-repeat: no-repeat;
+
+    filter: drop-shadow(2px 2px 0 rgba(37, 83, 35, .25));
+}
+
+/* Piedras y piedritas */
+.mapa .adorno-jardin.roca,
+.mapa .adorno-jardin.piedritas {
+    margin-top: 7px;
+}
+
+/* Hongos con su base cerca del césped */
+.mapa .adorno-jardin.hongo {
+    margin-top: 7px;
+}
+
+/* Evita que los adornos tapen los árboles al hacer clic */
+.mapa .adorno-jardin,
+.mapa .decoracion {
+    pointer-events: none;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 700px) {
+    .mapa {
+        min-height: 620px;
+        padding: 18px 8px 80px;
+    }
+}
+
+@media (max-width: 420px) {
+    .mapa {
+        min-height: 590px;
+        padding: 16px 4px 76px;
+    }
+
+    .mapa .adorno-jardin.hierba {
+        width: 19px;
+        height: 16px;
+    }
+}
+
+
+
+
+
+
+
+
